@@ -1,41 +1,27 @@
-# Raw data for the A-share factor crowding project
+# Raw-data documentation for the A-share factor crowding project
 
-This private repository contains the raw daily market data and exchange margin-financing files used by the companion research repository:
+This repository now provides documentation only. It does not distribute raw provider data or stand-alone provider-derived datasets.
+
+The companion research repository is:
 
 https://github.com/WEN365-1/a-share-factor-crowding-research
 
-## Structure
+## Original input structure
+
+The research code documents the following local input structure for researchers who independently obtain the data under the upstream providers' terms:
 
 - `data/raw/daily/3/<code-prefix>/<code>.parquet`: Baostock unadjusted daily bars, one file per stock.
 - `data/raw/margin/sse/<YYYYMMDD>.parquet`: Shanghai Stock Exchange margin-financing detail.
 - `data/raw/margin/szse/<YYYYMMDD>.parquet`: Shenzhen Stock Exchange margin-financing detail.
 
-## Provenance and use
+## Public-release status
 
-The files are retained for reproducibility. Redistribution and reuse remain subject to the terms of the upstream data providers. The companion repository contains the cleaned/derived data, code, paper, reports, and evidence manifest.
+The former `v1.0-data` public release and its compressed raw-data asset were removed on 2026-10-25 after the author authorized suspension while asset-specific redistribution permission remains unresolved. A private archival copy was retained and verified before removal. The historical release must not be interpreted as evidence of continuing redistribution permission.
 
-## Download
+No replacement public download is provided. Do not use historical download links or checksum files as current acquisition instructions.
 
-Raw data are distributed as a compressed release asset because the uncompressed tree contains more than 10,000 individual files:
+## Lawful reconstruction
 
-https://github.com/WEN365-1/a-share-factor-crowding-raw-data/releases/tag/v1.0-data
+Researchers must obtain the required inputs directly from Baostock, the Shanghai Stock Exchange, and the Shenzhen Stock Exchange under their applicable terms, then construct the analysis inputs using the companion repository's code and documentation. The public package alone does not reproduce the empirical results.
 
-Download `raw_data.tar.zst`, then extract from the repository root:
-
-```bash
-tar --zstd -xf raw_data.tar.zst
-```
-
-This recreates `data/raw/daily/` and `data/raw/margin/`.
-
-## Checksum
-
-```text
-f3cff4a27805d82caaccb49e1e451c5244beb9c2cff1ad1fe181cd103d05145f  raw_data.tar.zst
-```
-
-Verify with:
-
-```bash
-sha256sum -c raw_data.tar.zst.sha256
-```
+If written permission later covers specific assets, only the covered assets and matching acquisition or redistribution instructions may be restored. Non-commercial research use, API accessibility, transformation, or aggregation alone is not treated as proof of redistribution permission.
